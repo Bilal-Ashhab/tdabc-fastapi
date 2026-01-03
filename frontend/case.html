@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Case Management</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/frontend/style.css">
 </head>
 <body>
 
@@ -12,11 +12,10 @@
 </header>
 
 <nav>
-    <a href="index.html">Dashboard</a>
-    <a href="case.html" class="active">Case Management</a>
+    <a href="/frontend/index.html">Dashboard</a>
+    <a href="/frontend/case.html" class="active">Case Management</a>
 </nav>
 
-<!-- ===== Create New Case ===== -->
 <section class="panel">
     <h2>Create New Case</h2>
 
@@ -28,10 +27,9 @@
     </select>
     <button onclick="createCase()">Create Case</button>
 
-    <p id="caseResult" style="color:green;"></p>
+    <p id="caseResult" class="status success"></p>
 </section>
 
-<!-- ===== Patient Flow Events ===== -->
 <section class="panel">
     <h2>Patient Flow Events</h2>
 
@@ -47,10 +45,9 @@
     </select>
 
     <button onclick="addEvent()">Add Event</button>
-    <p id="eventStatus" style="color:green;"></p>
+    <p id="eventStatus" class="status success"></p>
 </section>
 
-<!-- ===== Add Delay ===== -->
 <section class="panel">
     <h2>Add Delay</h2>
 
@@ -64,10 +61,9 @@
 
     <input id="delayMinutes" placeholder="Minutes">
     <button onclick="addDelay()">Add Delay</button>
-    <p id="delayStatus" style="color:green;"></p>
+    <p id="delayStatus" class="status success"></p>
 </section>
 
-<!-- ===== Calculate TDABC ===== -->
 <section class="panel">
     <h2>Calculate TDABC</h2>
 
@@ -77,6 +73,6 @@
     <div id="tdabcResult"></div>
 </section>
 
-<script src="app.js"></script>
+<script src="/frontend/app.js"></script>
 </body>
 </html>
