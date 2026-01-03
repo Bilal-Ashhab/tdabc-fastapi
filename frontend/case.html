@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Case Management & TDABC</h1>
+</header>
+
+<nav>
+    <a href="index.html">Dashboard</a>
+    <a href="case.html" class="active">Case Management</a>
+</nav>
+
+<!-- ===== Create New Case ===== -->
+<section class="panel">
+    <h2>Create New Case</h2>
+
+    <input id="patientKey" placeholder="Patient Key">
+    <select id="pathway">
+        <option value="PRIMI">Primipara</option>
+        <option value="MULTI">Multipara</option>
+        <option value="CS">C-Section</option>
+    </select>
+    <button onclick="createCase()">Create Case</button>
+
+    <p id="caseResult" style="color:green;"></p>
+</section>
+
+<!-- ===== Patient Flow Events ===== -->
+<section class="panel">
+    <h2>Patient Flow Events</h2>
+
+    <input id="eventCaseId" placeholder="Case ID">
+    <select id="eventType">
+        <option value="arrival">Arrival</option>
+        <option value="triage_start">Triage Start</option>
+        <option value="triage_end">Triage End</option>
+        <option value="exam_start">Exam Start</option>
+        <option value="exam_end">Exam End</option>
+        <option value="delivery">Delivery</option>
+        <option value="followup">Follow-up</option>
+    </select>
+
+    <button onclick="addEvent()">Add Event</button>
+    <p id="eventStatus" style="color:green;"></p>
+</section>
+
+<!-- ===== Add Delay ===== -->
+<section class="panel">
+    <h2>Add Delay</h2>
+
+    <input id="delayCaseId" placeholder="Case ID">
+    <select id="delayCode">
+        <option value="room_busy">Room Busy</option>
+        <option value="staff_busy">Staff Busy</option>
+        <option value="anesthesia">Anesthesia</option>
+        <option value="paperwork">Paperwork</option>
+    </select>
+
+    <input id="delayMinutes" placeholder="Minutes">
+    <button onclick="addDelay()">Add Delay</button>
+    <p id="delayStatus" style="color:green;"></p>
+</section>
+
+<!-- ===== Calculate TDABC ===== -->
+<section class="panel">
+    <h2>Calculate TDABC</h2>
+
+    <input id="calcCaseId" placeholder="Case ID">
+    <button onclick="calculateTDABC()">Calculate</button>
+
+    <div id="tdabcResult"></div>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
